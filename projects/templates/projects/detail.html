@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}
+projects - Detail
+{% endblock title %}
+
+{% block page_content %}
+<h1>projects - Detail</h1>
+
+<div class="row">
+    <div class="col-md-8">
+        {% if project.image %}
+        <img src="{{ project.image.url }}" width="100%">
+        {% endif %}
+    </div>
+    <div class="col-md-4">
+        <h1>{{ project.titolo }}</h1>
+        <h5>Descrizione:</h5>
+        <p>{{ project.descrizione }}</p>
+        <br>
+        <p>
+            <a href="../../{{ project.link}}" class="btn btn-primary">
+                Apri
+            </a>
+        </p>
+        <p>
+            <a href="{% url 'projects_home' %}" class="btn btn-primary">
+                Indietro
+            </a>
+        </p>
+    </div>
+</div>
+
+{% endblock page_content %}

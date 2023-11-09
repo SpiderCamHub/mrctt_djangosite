@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}
+qrgen - Home
+{% endblock title %}
+
+{% block page_content %}
+
+<!--<head>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        div {
+            text-align: center;
+        }
+    </style>
+</head>-->
+
+<body>
+    <h1>
+        Genera codice QR
+    </h1>
+
+    <div>
+        <form action="{% url 'qrgen_result' %}" method="post">
+            {% csrf_token %}
+            <p>
+                <input id="content" name="content" type="text" placeholder="Contenuto...">
+            </p>
+            <p>
+                
+                <input type="color" id="backcolor" name="backcolor" onchange="clickColor(0, -1, -1, 5)" value="#ff0000"
+                > Colore sfondo
+            </p>
+            <p>
+                
+                <input type="color" id="datacolor" name="datacolor" onchange="clickColor(0, -1, -1, 5)" value="#ff0000"
+                > Colore dati
+            </p>
+            <p>
+                <input class="btn btn-primary" type="submit" value="submit">
+            </p>
+        </form>
+    </div>
+    <p>
+    <a href="{% url 'projects_home' %}" class="btn btn-primary">
+        Indietro
+    </a>
+</p>
+    <!--<p><a href="javascript:window.history.back();" class="btn btn-primary">Back</a></p>-->
+</body>
+{% endblock page_content %}

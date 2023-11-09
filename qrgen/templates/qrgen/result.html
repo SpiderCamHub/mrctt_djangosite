@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+qrgen - Home
+{% endblock title %}
+
+{% block page_content %}
+
+<body>
+    <div class="row">
+        <div class="col-md-8">
+            {% if qrgen.image %}
+            <img src="{{ qrgen.image.url }}" width="100%">
+            {% endif %}
+        </div>
+        <div class="col-md-4">
+            <h1>{{ qrgen.titolo }}</h1>
+            <h5>Contenuto:</h5>
+            <p>{{ qrgen.contenuto }}</p>
+            <br>
+            <a href="{% url 'qrgen_home' %}" class="btn btn-primary">
+                Indietro
+            </a>
+        </div>
+    </div>
+</body>
+{% endblock page_content %}

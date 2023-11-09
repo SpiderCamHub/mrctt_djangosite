@@ -1,0 +1,15 @@
+1) creare app tramite comando
+python manage.py startapp pages
+
+2) aggiungere app alla lista di quelli installate nel sito in "settings.py" del progetto
+
+3) creare una vista in views.py dell'app con la funzione che quando richiamata apre la pagina html dell'app
+
+4) creare il file html della pagina richiamata allo step 3) nella cartella templates\pages dell'app
+
+5.1) creare il collegamento alla pagina nel file urls.py del progetto per richiamare l'url nel file urls.py dell'app
+5.2) creare il collegamento nel file urls.py del progetto per richiamare la funzione nel file views.py dell'app (non serve scrivere nulla nel file urls.py dell'app)
+
+
+
+

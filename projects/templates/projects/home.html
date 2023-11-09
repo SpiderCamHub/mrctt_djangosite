@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}
+projects - Home
+{% endblock title %}
+
+{% block page_content %}
+<h1>projects - Home</h1>
+
+<!--<div class="row">
+    {% for project in projects %}
+    <div class="col-md-4">
+        <div class="card border-primary mb-3" style="border-radius: 15px; min-height: 35vh;">
+
+            --><!--<div class="card-header">
+                {{ project.titolo }}
+            </div>--><!--
+
+            {% if project.image %}
+            <img class="card-img-top" src="{{ project.image.url }}"
+                style="border-top-left-radius: 15px; border-top-right-radius: 15px; object-fit: cover; max-width: 100%; max-height: 20vh; min-height: 15vh;">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ project.titolo }}</h5>
+                <p class="card-text">{{ project.descrizione }}</p>
+
+            </div>
+
+            <div class="card-footer">
+                <a href="{% url 'project_detail' project.pk %}" class="btn btn-primary">
+                    Dettagli
+                </a>
+            </div>
+
+        </div>
+    </div>
+    {% endfor %}
+</div>-->
+
+    <div class="card-group">
+        {% for project in projects %}
+        <div class="card border-primary" >
+            <img class="card-img-top" src="{{ project.image.url }}"style="object-fit: cover;  height: 20vh;">
+            <div class="card-body">
+                <h5 class="card-title">{{ project.titolo }}</h5>
+                <p class="card-text">{{ project.descrizione }}</p>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'project_detail' project.pk %}" class="btn btn-primary">
+                    Dettagli
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% endblock page_content %}
